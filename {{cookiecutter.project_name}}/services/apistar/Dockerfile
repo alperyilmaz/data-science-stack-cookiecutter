@@ -1,14 +1,14 @@
-FROM python:3.6-alpine
+FROM python:3.6-slim
 MAINTAINER Joshua Goerner <joshua.goerner@gmail.com>
 
 WORKDIR /usr/src/app
 
-RUN apk add --update \
-    postgresql-dev \
-    build-base \
-    openblas-dev \
-    gfortran \
-  && rm -rf /var/cache/apk/*
+#RUN apk add --update \
+#    postgresql-dev \
+#    build-base \
+#    openblas-dev \
+#    gfortran \
+#  && rm -rf /var/cache/apk/*
 
 RUN pip install --no-cache-dir --proxy=${http_proxy}\
   numpy===1.14.3
